@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "StateX")]
+public class skriptableObjFld : ScriptableObject
+{
+
+    [TextArea(10, 14)] [SerializeField] string gameKiStory;
+    [SerializeField] skriptableObjFld[] nextState;
+
+    public string GetStateStory()
+    {
+        return gameKiStory;
+    }
+
+    public skriptableObjFld[] GetNextState()
+    {
+        return nextState;
+    }
+
+}
