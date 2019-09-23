@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "state")]
+public class StateMachine : ScriptableObject
+    //Name of the class is "SatateMachine" and it is derived from "ScriptableObject"
+{
+    [TextArea(10, 14)] [SerializeField] string StoryBox;
+
+     //The method below is called "GetStateData" and its of a type "String" and is "Public" in nature
+	public string GetStateData()
+    {
+        return StoryBox;
+    }
+
+}
