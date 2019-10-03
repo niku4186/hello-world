@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+//this means we can use the name space of the Scene Management and all that is contained within
+
+public class SceneLoader : MonoBehaviour
+{
+    public void LoadNextScene()
+    {
+        //We are trying to get an integer value out of our scenes that's why we are creating an interger type of variable
+        //RHS of Equal sign gives a numeric value. 
+        //Using the SceneManager, the BuildIndex number of the Active Scene will be assigned to the variable CurrentSceneIndex
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //currentSceneIndex is a variable of type Integer
+        //SceneManager is a class
+        //GetActiveScene() is a method
+        //SceneManager.GetActiveScene() this gets the currently active scene
+        //buildIndex returns the index value of the scene in the Build Settings. This index is a numerical value like 1, 2, or 3 etc.
+
+        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        //SceneManager.LoadScene() Loads the scene by its name or index in Build Settings
+        //e.g., SceneManager.LoadScene(0); will load the First Scene
+        //similarly, SceneManager.LoadScene(0+1); will load the Second Scene as the build index of scene two is 1
+        //So, SceneManager.LoadScene(CurrentSceneIndex + 1); will take the value of CurrentSceneIndex+1
+        //if CurrentSceneIndex = 2 the operation will be SceneManager.LoadScene(2+1); or SceneManager.LoadScene(3);
+        //This will Load the Scene which has the Build Index 2 in the SceneManager       
+    }
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+}
